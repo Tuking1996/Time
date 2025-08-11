@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tokyo Time</title>
+<style>
+    body {
+        background-color: #1c1c1c;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Flag */
+    .flag {
+        margin-top: 30px;
+    }
+    .flag img {
+        width: 60px;
+        vertical-align: middle;
+    }
+
+    /* City and Country */
+    .location {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #f9c72c; /* Exact yellow from screenshot */
+        margin-top: 5px;
+    }
+    .country {
+        font-size: 1rem;
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    /* Clock Layout */
+    .clock {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        font-weight: bold;
+    }
+    .time {
+        font-size: 12rem; /* Big numbers */
+        color: #f9c72c;
+        line-height: 1;
+    }
+    .seconds {
+        font-size: 3.5rem;
+        color: white;
+        margin-left: 5px;
+        margin-
