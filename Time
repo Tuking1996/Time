@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tokyo Time</title>
+<style>
+    body {
+        background-color: #1c1c1c;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    .flag {
+        margin-top: 20px;
+    }
+    .flag img {
+        width: 60px;
+    }
+    .location {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #f4c542;
+    }
+    .country {
+        font-size: 1rem;
+        color: #d0d0d0;
+    }
+    .clock {
+        font-size: 10rem;
+        font-weight: bold;
+        color: #f4c542;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .seconds {
+        font-size: 3rem;
+        color: white;
+        margin-left: 5px;
+        margin-top: 20px;
+    }
+    .date {
+        font-size: 1.5rem;
+        margin-top: -20px;
+        color: white;
+    }
+</style>
+</head>
+<body>
+
+<div class="flag">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" alt="Japan Flag">
+</div>
+<div class="location">Tokyo</div>
+<div class="country">Japan</div>
+
+<div class="clock">
+    <div id="time">00:00</div>
+    <div class="seconds" id="seconds">00</div>
+</div>
+
+<div class="date" id="date">Monday, 11 August 2025</div>
+
+<script>
+function updateClock() {
+    const now = new Date();
+    const options = { timeZone: 'Asia/Tokyo', hour12: false };
+    const hour = now.toLocaleString('en-US', { timeZone: 'Asia/Tokyo', hour: '2-digit', ...options });
+    const minute = now.toLocaleString('en-US', { timeZone: 'Asia/Tokyo', minute: '2-digit', ...options });
+    const second = now.toLocaleString('en-US', { timeZone: 'Asia/Tokyo', second: '2-digit', ...options });
+    document.getElementById("time").textContent = `${hour}:${minute}`;
+    document.getElementById("seconds").textContent = second;
+
+    const dateOptions = { timeZone: 'Asia/Tokyo', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById("date").textContent = new Date().toLocaleDateString('en-US', dateOptions);
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+</body>
+</html>
